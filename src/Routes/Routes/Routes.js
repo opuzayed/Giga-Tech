@@ -5,12 +5,13 @@ import Category from "../../Pages/Category/Category/Category";
 import Faq from "../../Pages/FAQ/FAQ/Faq";
 import Home from "../../Pages/Home/Home/Home";
 import Login from "../../Pages/Login/Login/Login";
-// import Login from "../../Pages/Login/Login/Login";
-// import Register from "../../Pages/Login/Register/Register";
+import Register from "../../Pages/Login/Register/Register";
 import News from "../../Pages/News/News/News";
-// import Profile from "../../Pages/Others/Profile/Profile";
-// import TermsAndConditions from "../../Pages/Others/TermsAndContions/TermsAndConditions";
+import Profile from "../../Pages/Others/Profile/Profile";
+//import TermsAndConditions from "../../Pages/Others/TermsAndConditions/TermsAndConditions";
 import PrivateRoute from "../PrivateRoute/PrivateRoute";
+import TermsAndConditions from './../../Pages/Others/TermsAndContions/TermsAndConditions';
+
 
 export const routes = createBrowserRouter([
     {
@@ -48,8 +49,8 @@ export const routes = createBrowserRouter([
            {
                 path: '/login',
                 element: <Login></Login>
-            }
-             /* {
+            },
+             {
                 path:'/register',
                 element: <Register></Register>
             },
@@ -60,7 +61,7 @@ export const routes = createBrowserRouter([
             {
                 path: '/profile',
                 element: <PrivateRoute><Profile></Profile></PrivateRoute>
-            } */
+            }
         ]
        
     }

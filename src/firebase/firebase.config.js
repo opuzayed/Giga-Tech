@@ -10,7 +10,7 @@ const firebaseConfig = {
   projectId: "gigatech-f3144",
   storageBucket: "gigatech-f3144.appspot.com",
   messagingSenderId: "401626773552",
-  appId: "1:401626773552:web:63481e0fee04aa043695f5"
+  appId: "1:401626773552:web:63481e0fee04aa043695f5",
 };
 
 // Initialize Firebase
