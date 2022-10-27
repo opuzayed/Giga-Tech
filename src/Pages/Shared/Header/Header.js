@@ -28,7 +28,7 @@ const Header = () => {
               className="d-inline-block align-top"
               alt=""
             />
-                <Navbar.Brand> <Link to='/'>GigaTech</Link></Navbar.Brand>
+                <Navbar.Brand> <Link style={{textDecoration: 'none'}} to='/'>GigaTech</Link></Navbar.Brand>
                 <Navbar.Toggle aria-controls="responsive-navbar-nav" />
                 <Navbar.Collapse id="responsive-navbar-nav">
                     <Nav className="me-auto">
@@ -36,9 +36,9 @@ const Header = () => {
                         <Nav.Link href="#pricing">FAQ</Nav.Link>
                         <Nav.Link href="#pricing">Blog</Nav.Link> */}
                        <>
-                       <Link to="/">Courses</Link>
-                        <Link to="/questions">FAQ</Link>
-                        <Link to="/">Blog</Link>
+                            <Link className='me-3' style={{textDecoration: 'none'}} to="/">Courses</Link>
+                            <Link className='me-3' style={{textDecoration: 'none'}} to="/questions">FAQ</Link>
+                            <Link className='me-3' style={{textDecoration: 'none'}} to="/blog">Blog</Link>
                        </>
                     </Nav>
                     <Nav>
@@ -55,8 +55,6 @@ const Header = () => {
                                         <Link to='/register'>Register</Link>
                                     </>
                             }
-
-
                         </>
                         <Link to="/profile">
                             {user?.photoURL ?
