@@ -3,13 +3,14 @@ import Button from 'react-bootstrap/Button';
 import ButtonGroup from 'react-bootstrap/ButtonGroup';
 import { FaGoogle, FaGithub} from "react-icons/fa";
 import { AuthContext } from '../../../contexts/AuthProvider/AuthProvider';
-import { GoogleAuthProvider } from 'firebase/auth';
+import { GithubAuthProvider, GoogleAuthProvider } from 'firebase/auth';
 
 const RightSideNav = () => {
 
-    const { providerLogin } = useContext(AuthContext);
+    const {providerLogin, githubLogin} = useContext(AuthContext);
 
-    const googleProvider = new GoogleAuthProvider()
+    const googleProvider = new GoogleAuthProvider();
+    const githubProvider = new GithubAuthProvider();
 
     const handleGoogleSignIn = () => {
         providerLogin(googleProvider)
@@ -20,14 +21,17 @@ const RightSideNav = () => {
             .catch(error => console.error(error))
     }
 
+    const handleGithubSignIn = () =>
+    {
+        githubLogin(githubProvider);
+    }
+
     return (
         <div>
             <ButtonGroup vertical>
                 <Button onClick={handleGoogleSignIn} className='mb-2' variant="outline-primary"> <FaGoogle></FaGoogle> Login with Google</Button>
-                <Button variant="outline-dark"> <FaGithub></FaGithub> Login with Github</Button>
+                <Button onClick={handleGithubSignIn} variant="outline-dark"> <FaGithub></FaGithub> Login with Github</Button>
             </ButtonGroup>
-            
-                
         </div>
     );
 };
