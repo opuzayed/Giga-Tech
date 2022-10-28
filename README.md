@@ -1,6 +1,6 @@
-# Getting Started with Create React App
+# Project Name : GigaTech
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Live Site Link : https://gigatech-f3144.web.app/
 
 ## Available Scripts
 
