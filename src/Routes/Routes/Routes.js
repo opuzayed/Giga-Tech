@@ -8,7 +8,6 @@ import Login from "../../Pages/Login/Login/Login";
 import Register from "../../Pages/Login/Register/Register";
 import News from "../../Pages/News/News/News";
 import Profile from "../../Pages/Others/Profile/Profile";
-//import TermsAndConditions from "../../Pages/Others/TermsAndConditions/TermsAndConditions";
 import PrivateRoute from "../PrivateRoute/PrivateRoute";
 import TermsAndConditions from './../../Pages/Others/TermsAndContions/TermsAndConditions';
 

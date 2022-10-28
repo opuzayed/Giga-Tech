@@ -65,22 +65,24 @@ const Header = () => {
           </Nav>
           <Nav>
             <>
-              {user?.uid ? (
+              {
+                user?.uid ? 
                 <>
                   <Link
-                    className="me-3 text-dark pe-none text-decoration-none"
+                    className="me-4 text-dark pe-none text-decoration-none"
                     to="#"
                   >
                     {user?.displayName}
                   </Link>
-                  <Link
-                    className="me-3 text-decoration-none"
+                  <Button
+                    className="me-2 text-decoration-none"
                     onClick={handleLogOut}
                   >
                     Log out
-                  </Link>
+                  </Button>
                 </>
-              ) : (
+            
+               : 
                 <>
                   <Link className="me-3 text-decoration-none" to="/login">
                     Login
@@ -89,18 +91,19 @@ const Header = () => {
                     Register
                   </Link>
                 </>
-              )}
+              }
             </>
             <Link to="/profile">
-              {user?.photoURL ? (
+              {
+                user?.photoURL ? 
                 <Image
                   style={{ height: "30px" }}
                   roundedCircle
                   src={user?.photoURL}
                 ></Image>
-              ) : (
+               : 
                 <FaUser></FaUser>
-              )}
+              }
             </Link>
           </Nav>
           <div className="d-lg-none">
