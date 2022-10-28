@@ -2,6 +2,9 @@
 
 Live Site Link : https://gigatech-f3144.web.app/
 
+# I made a online course website to choose different courses.
++ Here six types of course categories
+
 ## Available Scripts
 
 In the project directory, you can run:
