@@ -23,7 +23,12 @@ const RightSideNav = () => {
 
     const handleGithubSignIn = () =>
     {
-        githubLogin(githubProvider);
+        githubLogin(githubProvider)
+        .then(result => {
+            const user = result.user;
+            console.log(user);
+        })
+        .catch(error => console.error(error))
     }
 
     return (

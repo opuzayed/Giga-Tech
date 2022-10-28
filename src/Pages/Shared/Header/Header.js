@@ -78,7 +78,7 @@ const Header = () => {
                     className="me-2 text-decoration-none"
                     onClick={handleLogOut}
                   >
-                    Log out
+                    Logout
                   </Button>
                 </>
             
