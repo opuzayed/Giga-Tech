@@ -13,7 +13,7 @@ const Header = () => {
   const { user, logOut } = useContext(AuthContext);
 
   const handleLogOut = () => {
-    logOut()
+      logOut()
       .then(() => {})
       .catch((error) => console.error(error));
   };
@@ -78,7 +78,7 @@ const Header = () => {
                     className="me-2 text-decoration-none"
                     onClick={handleLogOut}
                   >
-                    Logout
+                  Log out
                   </Button>
                 </>
             
