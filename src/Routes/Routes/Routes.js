@@ -13,15 +13,6 @@ import TermsAndConditions from './../../Pages/Others/TermsAndContions/TermsAndCo
 
 
 export const routes = createBrowserRouter([
-    {
-        path:'/questions',
-        element:<Faq></Faq>,
-    },
-
-    {
-        path:'/blog',
-        element:<Blog></Blog>,
-    },
 
     {
         path: '/',
@@ -44,6 +35,14 @@ export const routes = createBrowserRouter([
                 element:<News></News>,
                 // element: <PrivateRoute><News></News></PrivateRoute>,
                 loader: ({params}) => fetch(`http://localhost:5000/news/${params.id}`)
+            },
+            {
+                path:'/questions',
+                element:<Faq></Faq>,
+            },
+            {
+                path:'/blog',
+                element:<Blog></Blog>,
             },
            {
                 path: '/login',
