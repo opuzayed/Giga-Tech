@@ -5,7 +5,8 @@ import toast from 'react-hot-toast';
 import { Link } from 'react-router-dom';
 import { AuthContext } from '../../../contexts/AuthProvider/AuthProvider';
 
-const Register = () => {
+    const Register = () => 
+    {
     const [error, setError] = useState('');
     const [accepted, setAccepted] = useState(false);
     const { createUser, updateUserProfile, verifyEmail } = useContext(AuthContext);
@@ -17,7 +18,6 @@ const Register = () => {
         const photoURL = form.photoURL.value;
         const email = form.email.value;
         const password = form.password.value;
-        // console.log(name, photoURL, email, password);
 
         createUser(email, password)
             .then(result => {
