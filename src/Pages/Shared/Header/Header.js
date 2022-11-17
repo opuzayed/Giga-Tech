@@ -8,6 +8,8 @@ import { Link } from "react-router-dom";
 import { AuthContext } from "../../../contexts/AuthProvider/AuthProvider";
 import LeftSideNav from "../LeftSideNav/LeftSideNav";
 import Button from "react-bootstrap/Button";
+import OverlayTrigger from "react-bootstrap/OverlayTrigger";
+import Tooltip from "react-bootstrap/Tooltip";
 import logo from "../../../assets/brands/courselogo.png";
 const Header = () => {
   const { user, logOut } = useContext(AuthContext);
@@ -78,9 +80,9 @@ const Header = () => {
             <>
               {user?.uid ? (
                 <>
-                  <span className="me-4 text-dark pe-none text-decoration-none">
+                  {/* <span className="me-4 text-dark pe-none text-decoration-none">
                     {user?.displayName}
-                  </span>
+                  </span> */}
                   <Button
                     className="me-2 text-decoration-none"
                     onClick={handleLogOut}
@@ -101,11 +103,19 @@ const Header = () => {
             </>
             <Link to="/profile">
               {user?.photoURL ? (
-                <Image
-                  style={{ height: "30px" }}
-                  roundedCircle
-                  src={user?.photoURL}
-                ></Image>
+                <OverlayTrigger
+                  key="bottom"
+                  placement="bottom"
+                  overlay={
+                    <Tooltip id="tooltip-1">{user?.displayName}</Tooltip>
+                  }
+                >
+                  <Image
+                    style={{ height: "30px" }}
+                    roundedCircle
+                    src={user?.photoURL}
+                  ></Image>
+                </OverlayTrigger>
               ) : (
                 <FaUser></FaUser>
               )}
