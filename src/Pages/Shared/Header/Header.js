@@ -8,14 +8,28 @@ import { Link } from "react-router-dom";
 import { AuthContext } from "../../../contexts/AuthProvider/AuthProvider";
 import LeftSideNav from "../LeftSideNav/LeftSideNav";
 import Button from "react-bootstrap/Button";
-
+import logo from "../../../assets/brands/courselogo.png";
 const Header = () => {
   const { user, logOut } = useContext(AuthContext);
 
   const handleLogOut = () => {
-      logOut()
+    logOut()
       .then(() => {})
       .catch((error) => console.error(error));
+  };
+
+  const handleTheme = () => {
+    let targetDiv = document.body;
+    let navDiv = document.getElementsByTagName("nav")[0];
+    targetDiv.classList.toggle("darkTheme");
+
+    if (targetDiv.classList.contains("darkTheme")) {
+      navDiv.classList.remove("navbar-light", "bg-light");
+      navDiv.classList.add("navbar-dark", "bg-dark");
+    } else {
+      navDiv.classList.remove("navbar-dark", "bg-dark");
+      navDiv.classList.add("navbar-light", "bg-light");
+    }
   };
 
   return (
@@ -27,13 +41,7 @@ const Header = () => {
       variant="light"
     >
       <Container>
-        <img
-          src={process.env.PUBLIC_URL + "/assets/brands/logo.png"}
-          width="30"
-          height="30"
-          className="d-inline-block align-top"
-          alt=""
-        />
+        <img src={logo} alt="" />
         <Navbar.Brand>
           {" "}
           <Link style={{ textDecoration: "none" }} to="/">
@@ -44,6 +52,9 @@ const Header = () => {
         <Navbar.Collapse id="responsive-navbar-nav">
           <Nav className="ms-auto">
             <>
+              <div className="me-2 text-decoration-none" onClick={handleTheme}>
+                Change Theme
+              </div>
               <Link className="me-3" style={{ textDecoration: "none" }} to="/">
                 Courses
               </Link>
@@ -65,23 +76,19 @@ const Header = () => {
           </Nav>
           <Nav>
             <>
-              {
-                user?.uid ? 
+              {user?.uid ? (
                 <>
-                  <span
-                    className="me-4 text-dark pe-none text-decoration-none"
-                  >
+                  <span className="me-4 text-dark pe-none text-decoration-none">
                     {user?.displayName}
                   </span>
                   <Button
                     className="me-2 text-decoration-none"
                     onClick={handleLogOut}
                   >
-                  Log out
+                    Log out
                   </Button>
                 </>
-            
-               : 
+              ) : (
                 <>
                   <Link className="me-3 text-decoration-none" to="/login">
                     Login
@@ -90,19 +97,18 @@ const Header = () => {
                     Register
                   </Link>
                 </>
-              }
+              )}
             </>
             <Link to="/profile">
-              {
-                user?.photoURL ? 
+              {user?.photoURL ? (
                 <Image
                   style={{ height: "30px" }}
                   roundedCircle
                   src={user?.photoURL}
                 ></Image>
-               : 
+              ) : (
                 <FaUser></FaUser>
-              }
+              )}
             </Link>
           </Nav>
           <div className="d-lg-none">
