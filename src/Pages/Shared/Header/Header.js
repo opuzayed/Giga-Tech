@@ -3,7 +3,7 @@ import { Image } from "react-bootstrap";
 import Container from "react-bootstrap/Container";
 import Nav from "react-bootstrap/Nav";
 import Navbar from "react-bootstrap/Navbar";
-import { FaUser } from "react-icons/fa";
+import { FaUser, FaGoogle, FaGithub } from "react-icons/fa";
 import { Link } from "react-router-dom";
 import { AuthContext } from "../../../contexts/AuthProvider/AuthProvider";
 import LeftSideNav from "../LeftSideNav/LeftSideNav";
@@ -26,11 +26,11 @@ const Header = () => {
     targetDiv.classList.toggle("darkTheme");
 
     if (targetDiv.classList.contains("darkTheme")) {
-      navDiv.classList.remove("navbar-light", "bg-light");
+      navDiv.classList.remove("navbar-light", "bg-secondary");
       navDiv.classList.add("navbar-dark", "bg-dark");
     } else {
       navDiv.classList.remove("navbar-dark", "bg-dark");
-      navDiv.classList.add("navbar-light", "bg-light");
+      navDiv.classList.add("navbar-light", "bg-secondary");
     }
   };
 
@@ -39,11 +39,11 @@ const Header = () => {
       collapseOnSelect
       className="mb-4"
       expand="lg"
-      bg="light"
+      bg="secondary"
       variant="light"
     >
       <Container>
-        <img src={logo} alt="" />
+        <img src={logo} className="me-2" alt="" />
         <Navbar.Brand>
           {" "}
           <Link style={{ textDecoration: "none" }} to="/">
@@ -54,7 +54,10 @@ const Header = () => {
         <Navbar.Collapse id="responsive-navbar-nav">
           <Nav className="ms-auto">
             <>
-              <div className="me-2 text-decoration-none" onClick={handleTheme}>
+              <div
+                className="me-2 text-decoration-none theme-btn"
+                onClick={handleTheme}
+              >
                 Change Theme
               </div>
               <Link className="me-3" style={{ textDecoration: "none" }} to="/">

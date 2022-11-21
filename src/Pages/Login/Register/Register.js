@@ -1,7 +1,5 @@
 import React, { useContext, useState } from "react";
-import Button from "react-bootstrap/Button";
 import Form from "react-bootstrap/Form";
-import toast from "react-hot-toast";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import { AuthContext } from "../../../contexts/AuthProvider/AuthProvider";
 
@@ -10,9 +8,7 @@ const Register = () => {
   const navigate = useNavigate();
   const location = useLocation();
   const from = location.state?.from?.pathname || "/";
-  // const [accepted, setAccepted] = useState(false);
-  const { createUser, updateUserProfile, verifyEmail } =
-    useContext(AuthContext);
+  const { createUser, updateUserProfile } = useContext(AuthContext);
 
   const handleSubmit = (event) => {
     event.preventDefault();
@@ -30,8 +26,8 @@ const Register = () => {
         form.reset();
         navigate(from, { to: "/" }, { replace: true });
         handleUpdateUserProfile(name, photoURL);
-        handleEmailVerification();
-        toast.success("Please verify your email address.");
+        // handleEmailVerification();
+        // toast.success("Please verify your email address.");
       })
       .catch((e) => {
         console.error(e);
@@ -50,51 +46,51 @@ const Register = () => {
       .catch((error) => console.error(error));
   };
 
-  const handleEmailVerification = () => {
-    verifyEmail()
-      .then(() => {})
-      .catch((error) => console.error(error));
-  };
-
-  // const handleAccepted = event => {
-  //     setAccepted(event.target.checked)
-  // }
-
   return (
-    <Form onSubmit={handleSubmit}>
-      <Form.Group className="mb-3" controlId="formBasicEmail">
-        <Form.Label>Your Name</Form.Label>
-        <Form.Control name="name" type="text" placeholder="Your Name" />
-      </Form.Group>
-      <Form.Group className="mb-3" controlId="formBasicEmail">
-        <Form.Label>Photo URL</Form.Label>
-        <Form.Control name="photoURL" type="text" placeholder="Phot URL" />
-      </Form.Group>
+    <div className="lr-form">
+      <h4 style={{ color: "green", fontWeight: "bold" }}>Hello Learners,</h4>
+      <p style={{ fontWeight: "bold", fontSize: "15px", marginBottom: "35px" }}>
+        Register now to learn more
+      </p>
+      <Form onSubmit={handleSubmit}>
+        <Form.Group className="mb-3" controlId="formBasicEmail">
+          <Form.Control name="name" type="text" placeholder="Your Name" />
+        </Form.Group>
+        <Form.Group className="mb-3" controlId="formBasicEmail">
+          <Form.Control name="photoURL" type="text" placeholder="Phot URL" />
+        </Form.Group>
 
-      <Form.Group className="mb-3" controlId="formBasicEmail">
-        <Form.Label>Email address</Form.Label>
-        <Form.Control
-          name="email"
-          type="email"
-          placeholder="Enter email"
-          required
-        />
-      </Form.Group>
+        <Form.Group className="mb-3" controlId="formBasicEmail">
+          <Form.Control
+            name="email"
+            type="email"
+            placeholder="Enter email"
+            required
+          />
+        </Form.Group>
 
-      <Form.Group className="mb-3" controlId="formBasicPassword">
-        <Form.Label>Password</Form.Label>
-        <Form.Control
-          name="password"
-          type="password"
-          placeholder="Password"
-          required
-        />
-      </Form.Group>
-      <Button variant="primary" type="submit">
-        Register
-      </Button>
-      <Form.Text className="text-danger">{error}</Form.Text>
-    </Form>
+        <Form.Group className="mb-3" controlId="formBasicPassword">
+          <Form.Control
+            name="password"
+            type="password"
+            placeholder="Password"
+            required
+          />
+        </Form.Group>
+
+        <div class="d-grid gap-2">
+          <button class="btn btn-primary py-1" type="submit">
+            <span style={{ fontWeight: "bold", fontSize: "20px" }}>
+              Register
+            </span>
+          </button>
+        </div>
+        <Form.Text className="text-danger">{error}</Form.Text>
+      </Form>
+      <p style={{ fontWeight: "bold", marginTop: "10px" }}>
+        Already have an account?Please <Link to="/login">Login</Link>
+      </p>
+    </div>
   );
 };
 

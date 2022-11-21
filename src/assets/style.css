@@ -1,0 +1,96 @@
+a {
+  transition: color 0.3s ease;
+}
+.lnav {
+  padding: 1.2rem;
+  background: #f2f2f2;
+  border-radius: 8px;
+  text-align: left;
+}
+
+.lnav h4 {
+  margin-bottom: 1.5rem;
+}
+
+.lnav p:last-child {
+  margin-bottom: 0;
+}
+
+.lnav a {
+  color: #000;
+}
+
+.lnav a:hover,
+.lnav a:focus {
+  color: var(--bs-link-color);
+}
+
+nav a {
+  color: #fff;
+}
+
+nav a:hover,
+nav a:focus {
+  color: #000;
+}
+
+.theme-btn {
+  color: #fff;
+  background-color: #383838;
+  padding: 5px 10px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.navbar-nav {
+  align-items: center;
+}
+
+.card-img-top {
+  height: 280px;
+  object-fit: cover;
+  margin-bottom: 10px;
+}
+
+.card,
+.lnav {
+  border: 0 !important;
+  box-shadow: 0 0 8px rgba(0, 0, 0, 0.3);
+}
+
+.lr-form {
+  padding: 2rem 5rem;
+  box-shadow: 0 0 5px rgb(0 0 0 / 30%);
+}
+
+.darkTheme {
+  transition: all 0.3s ease;
+}
+
+.darkTheme {
+  background-color: #383838;
+}
+
+.darkTheme .theme-btn {
+  color: #000;
+  background-color: #f1f1f1;
+}
+
+.darkTheme nav a:hover,
+.darkTheme nav a:focus {
+  color: var(--bs-link-color);
+}
+
+.darkTheme .log-mid p {
+  color: #fff;
+}
+
+.darkTheme .btn-group-vertical button {
+  background: #fff;
+  color: #000;
+}
+
+.darkTheme .btn-group-vertical button:hover {
+  background: var(--bs-link-color);
+  color: #fff;
+}
