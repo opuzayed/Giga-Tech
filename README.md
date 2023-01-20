@@ -1,8 +1,8 @@
 # Project Name : GigaTech
 
-Server Site Link : https://github.com/opuzayed/Giga-Tech-Server
-
 Live Site Link : https://gigatech-f3144.web.app/
+
+Server Site Link : https://github.com/opuzayed/Giga-Tech-Server
 
 ## I made a single page online course website to choose different courses.
 + firstly, I made a navbar which contains different link, so that user can move one link to another link
