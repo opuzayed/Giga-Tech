@@ -1,5 +1,7 @@
 # Project Name : GigaTech
 
+Server Site Link : https://github.com/opuzayed/Giga-Tech-Server
+
 Live Site Link : https://gigatech-f3144.web.app/
 
 ## I made a single page online course website to choose different courses.
